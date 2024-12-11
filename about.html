@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Bosca Pang</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        header h1, h2, h3 {
+            color: #888888; /* Neutral grey for good contrast */
+        }
+        .btn {
+            padding: 10px 15px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: #444;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <header>
+        <h1>About Me</h1>
+        <div class="main-buttons">
+            <button class="btn" onclick="window.location.href='main.html'">Main Page</button>
+            <button class="btn" onclick="window.location.href='portfolio.html'">Portfolio</button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Who Am I?</h2>
+            <p>Hello, my name is Bosca Pang, and I am a second-year Computer Science student at the University of Hertfordshire. With a passion for problem-solving and a knack for creative solutions, I am particularly interested in video game development and artificial intelligence.</p>
+  <p>
+                Outside of academics, I enjoy staying up-to-date with the latest trends in technology and engaging with indie game developers to discuss games. In my free time, you can find me experimenting with new recipes or exploring indie games.
+            </p>
+            </section>
+        <section>
+            <h2>Technical Interests</h2>
+            <div>
+                <h3>Artificial Intelligence</h3>
+                <p>Artificial Intelligence fascinates me because it combines problem-solving with creativity. I am particularly interested in machine learning and how it can be applied to video games, from creating adaptive enemy behavior to procedural content generation. My exploration experimenting with AI tools like TensorFlow and PyTorch. I dream to build my own neural network someday.</p>
+            </div>
+            <div>
+                <h3>Game Development</h3>
+                <p>Game development is a dynamic and exciting field that merges technical skills with storytelling and design. I enjoy creating immersive experiences using engines like Unity and Unreal Engine. Recently, I have focused on building gameplay mechanics. I want to study storytelling in the future. I have much more to learn.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bosca Pang. All Rights Reserved.</p>
+    </footer>
+    <button class="btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+            }
+        }
+    </script>
+</body>
+</html>
+

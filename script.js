@@ -1,25 +1,43 @@
+function toggleDarkMode() {
+    const body = document.body;
+    if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+    } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+    }
+}
+
 function showPopup(id) {
     const popup = document.getElementById(id);
-    popup.style.display = 'block';
+    if (popup) {
+        popup.style.display = 'block';
+    } else {
+        alert('Popup not found');
+    }
 }
 
 function closePopup(id) {
     const popup = document.getElementById(id);
-    popup.style.display = 'none';
+    if (popup) {
+        popup.style.display = 'none';
+    }
 }
 
-// Dark Mode Toggle
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-}
-
-// Add a dark mode button dynamically
-document.addEventListener('DOMContentLoaded', () => {
-    const darkModeButton = document.createElement('button');
-    darkModeButton.innerText = 'Toggle Dark Mode';
-    darkModeButton.onclick = toggleDarkMode;
-    darkModeButton.style.position = 'fixed';
-    darkModeButton.style.top = '10px';
-    darkModeButton.style.right = '10px';
-    document.body.appendChild(darkModeButton);
+window.addEventListener('click', (event) => {
+    if (event.target.classList.contains('popup')) {
+        event.target.style.display = 'none';
+    }
 });
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'd') toggleDarkMode();
+    if (event.key === 'Escape') {
+        document.querySelectorAll('.popup').forEach((popup) => {
+            popup.style.display = 'none';
+        });
+    }
+});
+
+

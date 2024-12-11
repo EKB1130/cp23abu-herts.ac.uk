@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page - Bosca Pang</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        header h1, h2, h3 {
+            color: #888888; /* Neutral grey for good contrast */
+        }
+        .btn {
+            padding: 10px 15px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: #444;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <header>
+        <h1>Bosca Pang</h1>
+        <p>2 Year of Study | Award Studying For Computer Science</p>
+        <img src="placeholder.jpg" alt="Your Picture" class="profile-image">
+    </header>
+    <main>
+        <div class="main-buttons">
+            <button class="btn" onclick="window.location.href='about.html'">About Me</button>
+            <button class="btn" onclick="window.location.href='portfolio.html'">Portfolio</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bosca Pang. All Rights Reserved.</p>
+    </footer>
+    <button class="btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+            }
+        }
+    </script>
+</body>
+</html>
