@@ -1,0 +1,46 @@
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+header, footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+h1, h2, h3 {
+    color: #222;
+}
+.profile-image {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+.interest-image {
+    width: 200px;
+    height: auto;
+}
+a, button {
+    color: #007BFF;
+    text-decoration: none;
+}
+a:hover, button:hover {
+    text-decoration: underline;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+}
+.popup-content {
+    color: #333;
+}

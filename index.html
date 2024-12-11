@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        header {
+            text-align: center;
+            background-color: #444;
+            color: #f0f0f0;
+            padding: 10px 0;
+        }
+        .light-mode header {
+            background-color: #f0f0f0;
+            color: #444;
+        }
+        footer {
+            text-align: center;
+            background-color: #222;
+            color: #e0e0e0;
+            padding: 10px 0;
+        }
+        .light-mode footer {
+            background-color: #f0f0f0;
+            color: #444;
+        }
+        h1, h2, h3 {
+            color: #ffffff;
+        }
+        .light-mode h1, .light-mode h2, .light-mode h3 {
+            color: #000000;
+        }
+        .profile-image {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .interest-image {
+            width: 200px;
+            height: auto;
+        }
+        a, button {
+            color: #00aaff;
+            text-decoration: none;
+        }
+        a:hover, button:hover {
+            text-decoration: underline;
+            color: #ff8800;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            padding: 20px;
+        }
+        .popup-content {
+            color: #333;
+        }
+        .btn {
+            background-color: #444;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #ff8800;
+        }
+        .light-mode .btn {
+            background-color: #f0f0f0;
+            color: #444;
+        }
+        .light-mode .btn:hover {
+            background-color: #00aaff;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <header>
+        <h1>Bosca Pang</h1>
+        <p>2 Year of Study | Award Studying For Computer Science</p>
+    </header>
+
+    <button class="btn" onclick="toggleDarkMode()" title="Switch between light and dark themes">Toggle Dark Mode</button>
+
+    <main>
+        <!-- About You Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="placeholder.jpg" alt="Your Image Placeholder" class="profile-image">
+            <p>
+                Hello, my name is Bosca Pang, and I am a second-year Computer Science student at the University of Hertfordshire. With a passion for problem-solving and a knack for creative solutions, I am particularly interested in video game development and artificial intelligence.
+            </p>
+            <p>
+                Outside of academics, I enjoy staying up-to-date with the latest trends in technology and engaging with indie game developers to discuss games. In my free time, you can find me experimenting with new recipes or exploring indie games.
+            </p>
+        </section>
+
+        <!-- Technical Interests Section -->
+        <section id="technical-interests">
+            <h2>Technical Interests</h2>
+            <div class="interest">
+                <h3>Artificial Intelligence</h3>
+                <img src="ai_placeholder.jpg" alt="Artificial Intelligence" class="interest-image">
+                <p>
+                    Artificial Intelligence fascinates me because it combines problem-solving with creativity. I am particularly interested in machine learning and how it can be applied to video games, from creating adaptive enemy behavior to procedural content generation. My exploration includes building small neural networks and experimenting with AI tools like TensorFlow and PyTorch.
+                </p>
+            </div>
+            <div class="interest">
+                <h3>Game Development</h3>
+                <img src="game_dev_placeholder.jpg" alt="Game Development" class="interest-image">
+                <p>
+                    Game development is a dynamic and exciting field that merges technical skills with storytelling and design. I enjoy creating immersive experiences using engines like Unity and Unreal Engine. Recently, I have focused on building gameplay mechanics. I want to study storytelling in the future. I have much more to learn.
+                </p>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="project">
+                <h3>Project 1</h3>
+                <button class="btn" onclick="showPopup('project1-details')">View Details</button>
+                <a href="project1.html" target="_blank">Go to Project Page</a>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <button class="btn" onclick="showPopup('project2-details')">View Details</button>
+                <a href="project2.html" target="_blank">Go to Project Page</a>
+            </div>
+        </section>
+
+        <!-- Project Details Popup -->
+        <div id="project1-details" class="popup">
+            <div class="popup-content">
+                <h3>Project 1 Details</h3>
+                <p>Add detailed information about Project 1 here.</p>
+                <button class="btn" onclick="closePopup('project1-details')">Close</button>
+            </div>
+        </div>
+        <div id="project2-details" class="popup">
+            <div class="popup-content">
+                <h3>Project 2 Details</h3>
+                <p>Add detailed information about Project 2 here.</p>
+                <button class="btn" onclick="closePopup('project2-details')">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EKB1130. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+            }
+        }
+
+        function showPopup(id) {
+            const popup = document.getElementById(id);
+            if (popup) {
+                popup.style.display = 'block';
+            } else {
+                alert('Popup not found');
+            }
+        }
+
+        function closePopup(id) {
+            const popup = document.getElementById(id);
+            if (popup) {
+                popup.style.display = 'none';
+            }
+        }
+
+        window.addEventListener('click', (event) => {
+            if (event.target.classList.contains('popup')) {
+                event.target.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'd') toggleDarkMode();
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.popup').forEach((popup) => {
+                    popup.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
